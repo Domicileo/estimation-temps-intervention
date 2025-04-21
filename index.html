@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Estimation des temps d'intervention</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <img src="img/logo.png" alt="Logo" style="max-height:50px; margin-bottom:0.5rem;">
+    <h1>Estimation des temps d'intervention</h1>
+  </header>
+  <main>
+    <div class="form-names">
+      <input type="text" id="nom" placeholder="Nom" />
+      <input type="text" id="prenom" placeholder="Prénom" />
+    </div>
+
+    <h2>Configuration des pièces</h2>
+    <div id="pieces-container"></div>
+
+    <button onclick="ajouterPiece()">Ajouter une pièce</button>
+
+    <div class="estimation">
+      <p><strong>Temps total pièces :</strong> <span id="total-temps">0 min</span></p>
+      <p><strong>Surface totale pièces :</strong> <span id="total-surface">0 m²</span></p>
+    </div>
+
+    <label for="entretien"><strong>Niveau entretien :</strong></label>
+    <select id="entretien">
+      <option value="tres-soigne">Très soigné</option>
+      <option value="courant">Entretien courant</option>
+      <option value="approfondi">Entretien approfondi</option>
+    </select>
+
+    <h2>Estimation</h2>
+    <button onclick="exporterPDF()">📄 Exporter PDF</button>
+    <button onclick="window.print()">🖨️ Imprimer</button>
+
+    <nav>
+      <a href="parametres.html">⚙️ Paramètres</a>
+    </nav>
+  </main>
+
+  <script src="js/app.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</body>
+</html>
